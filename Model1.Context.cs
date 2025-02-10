@@ -13,10 +13,22 @@ namespace Baibakov_41
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Baibakov_41Entities : DbContext
+    public partial class Baibakov_41Entities1 : DbContext
     {
-        public Baibakov_41Entities()
-            : base("name=Baibakov_41Entities")
+        private static Baibakov_41Entities1 _context;
+
+        public static Baibakov_41Entities1 GetContext()
+        {
+            if (_context == null)
+            {
+                _context = new Baibakov_41Entities1();
+            }
+
+            return _context;
+        }
+
+        public Baibakov_41Entities1()
+            : base("name=Baibakov_41Entities1")
         {
         }
     
