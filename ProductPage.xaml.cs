@@ -24,7 +24,7 @@ namespace Baibakov_41
         {
             InitializeComponent();
 
-            var currentProducts = Baibakov_41Entities1.GetContext().Product.ToList();
+            var currentProducts = Baibakov_41Entities.GetContext().Product.ToList();
 
             ProductListView.ItemsSource = currentProducts;
         }
