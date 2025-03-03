@@ -17,10 +17,12 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Width="800">
+            <TextBlock Name="UserName" Text="Вы вошли как: " Margin="5"/>
+            <TextBlock Name="UserRole" Text="Роль: " Margin="5"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock Text="количество продуктов" Width="130" Margin="5"/>
                 <TextBlock Text="поиск по наименованию" Width="160" Margin="5"/>
-                <RadioButton Name="descRadioBtn" GroupName="AscDesc" IsEnabledChanged="descRadioBtn_IsEnabledChanged" DataContextChanged="descRadioBtn_DataContextChanged" Content="по возрастанию стоимости" IsChecked="True" Width="180" Margin="5"/>
+                <RadioButton Name="descRadioBtn" GroupName="AscDesc" IsEnabledChanged="descRadioBtn_IsEnabledChanged" DataContextChanged="descRadioBtn_DataContextChanged" Content="по возрастанию стоимости" Width="180" Margin="5"/>
                 <TextBlock Text="фильтрация по скидке" Width="160" Margin="5"/>
                 <TextBlock Width="130" Margin="5"/>
             </StackPanel>

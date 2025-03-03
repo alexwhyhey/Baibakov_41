@@ -24,7 +24,7 @@ namespace Baibakov_41
         {
             InitializeComponent();
 
-            MainFrame.Navigate(new ProductPage());
+            MainFrame.Navigate(new AuthPage());
             Manager.MainFrame = MainFrame;
         }
 

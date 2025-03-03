@@ -20,12 +20,22 @@ namespace Baibakov_41
     /// </summary>
     public partial class ProductPage : Page
     {
-        public ProductPage()
+        public ProductPage(User user)
         {
             InitializeComponent();
+            if (user != null)
+            {
+                UserName.Text = UserName.Text + user.UserSurname + " " + user.UserName + " " + user.UserPatronymic;
+                UserRole.Text = UserRole.Text + user.Role.RoleName;
+            } else
+            {
+                UserName.Text = UserName.Text + "гость";
+                UserRole.Text = UserRole.Text + "отсутствует";
+            }
 
             var currentProducts = Baibakov_41Entities.GetContext().Product.ToList();
             CBoxType.SelectedIndex = 0;
+            ascRadioBtn.IsChecked = true;
 
             ProductListView.ItemsSource = currentProducts;
             SomethingHasChanged();

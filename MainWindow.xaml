@@ -25,7 +25,7 @@
 
 
 
-        <Button Content="Назад" Name="BtnBack" HorizontalAlignment="Right" Click="BtnBack_Click"/>
+        <Button Content="Выйти" Name="BtnBack" HorizontalAlignment="Right" Click="BtnBack_Click"/>
 
     </Grid>
 </Window>
