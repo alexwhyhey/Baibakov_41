@@ -16,6 +16,28 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
+        <StackPanel Grid.Row="0" Width="800">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="количество продуктов" Width="130" Margin="5"/>
+                <TextBlock Text="поиск по наименованию" Width="160" Margin="5"/>
+                <RadioButton Name="descRadioBtn" GroupName="AscDesc" IsEnabledChanged="descRadioBtn_IsEnabledChanged" DataContextChanged="descRadioBtn_DataContextChanged" Content="по возрастанию стоимости" IsChecked="True" Width="180" Margin="5"/>
+                <TextBlock Text="фильтрация по скидке" Width="160" Margin="5"/>
+                <TextBlock Width="130" Margin="5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Name="ProductCountTextBlock" Width="130" Margin="5"/>
+                <TextBox Name="TBoxSearch" TextChanged="TBoxSearch_TextChanged" Width="160" Margin="5"/>
+                <RadioButton Name="ascRadioBtn" GroupName="AscDesc" DataContextChanged="ascRadioBtn_DataContextChanged" IsEnabledChanged="ascRadioBtn_IsEnabledChanged"  Content="по убыванию стоимости" Margin="5" Width="180"/>
+                <ComboBox Name="CBoxType" Text="Типы" SelectionChanged="CBoxType_SelectionChanged" Width="160" Margin="5">
+                    <TextBlock>Все диапазоны</TextBlock>
+                    <TextBlock>0-9,99%</TextBlock>
+                    <TextBlock>10-14,99%</TextBlock>
+                    <TextBlock>15% и более</TextBlock>
+                </ComboBox>
+                <TextBlock Width="130" Margin="5"/>
+            </StackPanel>
+        </StackPanel>
+
         <ListView Name="ProductListView" Grid.Row="1">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -35,7 +57,7 @@
 
                         <Image Width="180" Height="150" Grid.Column="0" Grid.Row="0" Grid.RowSpan="4" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <Image.Source>
-                                <Binding Path="ProductPhoto">
+                                <Binding Path="ProductPhotoOptimize">
                                     <Binding.TargetNullValue>
                                         <ImageSource>
                                             ./Resources/default_image.png

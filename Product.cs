@@ -32,6 +32,15 @@ namespace Baibakov_41
         public int ProductQuantityInStock { get; set; }
         public string ProductDescription { get; set; }
         public string ProductPhoto { get; set; }
+
+        public string ProductPhotoOptimize {
+            get
+            {
+                if (this.ProductPhoto == null)
+                    return null;
+                return "./Resources/" + this.ProductPhoto;
+            }
+        }
         public string ProductStatus { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
