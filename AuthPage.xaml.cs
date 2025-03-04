@@ -37,6 +37,9 @@ namespace Baibakov_41
         private void SignInAsGuestBtn_Click(object sender, RoutedEventArgs e)
         {
             Manager.MainFrame.Navigate(new ProductPage(null));
+            captchaTextBox.Visibility = Visibility.Hidden;
+            CaptchaPanel.Visibility = Visibility.Hidden;
+            informationTextBlock.Visibility = Visibility.Hidden;
         }
 
         private void SignInBtn_Click(object sender, RoutedEventArgs e)

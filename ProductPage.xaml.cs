@@ -117,5 +117,14 @@ namespace Baibakov_41
             // Не работает
             SomethingHasChanged();
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            if (ProductListView.SelectedItems.Count >= 0)
+            {
+                var prod = ProductListView.SelectedItems as Product;
+                selectedProducts.Add(prod);
+            }
+        }
     }
 }
