@@ -20,6 +20,10 @@ namespace Baibakov_41
     /// </summary>
     public partial class ProductPage : Page
     {
+        List<Product> selectedProducts = new List<Product>();
+        List<OrderProduct> selectedOrders = new List<OrderProduct>();
+        User userForExchange = null;
+
         public ProductPage(User user)
         {
             InitializeComponent();
@@ -27,6 +31,8 @@ namespace Baibakov_41
             {
                 UserName.Text = UserName.Text + user.UserSurname + " " + user.UserName + " " + user.UserPatronymic;
                 UserRole.Text = UserRole.Text + user.Role.RoleName;
+
+                userForExchange = user;
             } else
             {
                 UserName.Text = UserName.Text + "гость";
@@ -124,7 +130,31 @@ namespace Baibakov_41
             {
                 var prod = ProductListView.SelectedItems as Product;
                 selectedProducts.Add(prod);
+
+                checkForItems();
             }
+        }
+
+        private void checkForItems()
+        {
+            if (selectedProducts.Count() > 0 )
+            {
+                if (basketBtn.Visibility == Visibility.Hidden)
+                {
+                    basketBtn.Visibility = Visibility.Visible;
+                }
+            } else
+            {
+                if (basketBtn.Visibility != Visibility.Hidden)
+                {
+                    basketBtn.Visibility = Visibility.Hidden;
+                }
+            }
+        }
+
+        private void basketBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new OrderWindow(selectedOrders, selectedProducts, userForExchange.UserNamesMerge));
         }
     }
 }

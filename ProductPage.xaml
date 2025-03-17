@@ -36,7 +36,7 @@
                     <TextBlock>10-14,99%</TextBlock>
                     <TextBlock>15% и более</TextBlock>
                 </ComboBox>
-                <TextBlock Width="130" Margin="5"/>
+                <Button Name="basketBtn" Content="Корзина" Width="130" Height="20" FontSize="13" Visibility="Hidden" Click="basketBtn_Click"/>
             </StackPanel>
         </StackPanel>
 

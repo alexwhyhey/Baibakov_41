@@ -51,18 +51,17 @@ namespace Baibakov_41
             this.selectedOrderProducts = selectedOrderProducts;
             this.selectedProducts = selectedProducts;
             CreateDatePicker.Text = DateTime.Now.ToString();
-            SetDeliveryDate();
-
+            DeliveryDatePicker.Text = DateTime.Now.AddDays(3).ToString();
         }
 
         private void SetDeliveryDate()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }
