@@ -22,14 +22,14 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock Text="количество продуктов" Width="130" Margin="5"/>
                 <TextBlock Text="поиск по наименованию" Width="160" Margin="5"/>
-                <RadioButton Name="descRadioBtn" GroupName="AscDesc" IsEnabledChanged="descRadioBtn_IsEnabledChanged" DataContextChanged="descRadioBtn_DataContextChanged" Content="по возрастанию стоимости" Width="180" Margin="5"/>
+                <RadioButton Name="descRadioBtn" GroupName="AscDesc" Checked="descRadioBtn_Checked" IsEnabledChanged="descRadioBtn_IsEnabledChanged" DataContextChanged="descRadioBtn_DataContextChanged" Content="по возрастанию стоимости" Width="180" Margin="5"/>
                 <TextBlock Text="фильтрация по скидке" Width="160" Margin="5"/>
                 <TextBlock Width="130" Margin="5"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock Name="ProductCountTextBlock" Width="130" Margin="5"/>
                 <TextBox Name="TBoxSearch" TextChanged="TBoxSearch_TextChanged" Width="160" Margin="5"/>
-                <RadioButton Name="ascRadioBtn" GroupName="AscDesc" DataContextChanged="ascRadioBtn_DataContextChanged" IsEnabledChanged="ascRadioBtn_IsEnabledChanged"  Content="по убыванию стоимости" Margin="5" Width="180"/>
+                <RadioButton Name="ascRadioBtn" GroupName="AscDesc" Checked="ascRadioBtn_Checked"  DataContextChanged="ascRadioBtn_DataContextChanged" IsEnabledChanged="ascRadioBtn_IsEnabledChanged"  Content="по убыванию стоимости" Margin="5" Width="180"/>
                 <ComboBox Name="CBoxType" SelectionChanged="CBoxType_SelectionChanged" Width="160" Margin="5">
                     <TextBlock>Все диапазоны</TextBlock>
                     <TextBlock>0-9,99%</TextBlock>

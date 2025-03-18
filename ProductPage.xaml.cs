@@ -56,14 +56,6 @@ namespace Baibakov_41
         {
             var currentProducts = Baibakov_41Entities.GetContext().Product.ToList();
 
-            if (ascRadioBtn.IsChecked == true)
-            {
-                currentProducts = currentProducts.OrderByDescending(p => p.ProductCost).ToList();
-            } else if (descRadioBtn.IsChecked == true)
-            {
-                currentProducts = currentProducts.OrderBy(p => p.ProductCost).ToList();
-            }
-
             switch (CBoxType.SelectedIndex)
             {
                 case 0:
@@ -82,6 +74,15 @@ namespace Baibakov_41
             if (!string.IsNullOrWhiteSpace(TBoxSearch.Text))
             {
                 currentProducts = currentProducts.Where(p => p.ProductName.ToLower().Contains(TBoxSearch.Text.ToLower())).ToList();
+            }
+
+            if (ascRadioBtn.IsChecked == true)
+            {
+                currentProducts = currentProducts.OrderByDescending(p => p.ProductCost).ToList();
+            }
+            if (descRadioBtn.IsChecked == true)
+            {
+                currentProducts = currentProducts.OrderBy(p => p.ProductCost).ToList();
             }
 
             ProductListView.ItemsSource = currentProducts;
@@ -155,6 +156,18 @@ namespace Baibakov_41
         private void basketBtn_Click(object sender, RoutedEventArgs e)
         {
             Manager.MainFrame.Navigate(new OrderWindow(selectedOrders, selectedProducts, userForExchange.UserNamesMerge));
+        }
+
+        private void ascRadioBtn_Checked(object sender, RoutedEventArgs e)
+        {
+
+            SomethingHasChanged();
+        }
+
+        private void descRadioBtn_Checked(object sender, RoutedEventArgs e)
+        {
+
+            SomethingHasChanged();
         }
     }
 }

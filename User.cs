@@ -27,7 +27,7 @@ namespace Baibakov_41
         public string UserLogin { get; set; }
         public string UserPassword { get; set; }
         public int UserRole { get; set; }
-
+    
         public string UserNamesMerge
         {
             get
